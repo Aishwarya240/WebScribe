@@ -1,22 +1,23 @@
+
 ---
 
 # WebScribe - AI Web Summarizer
 
-**WebScribe** is a Python-based command-line tool that turns any webpage into a concise, readable summary using **Llama 2** via **Ollama**. It extracts the main text from web articles and generates a human-friendly summary with optional multi-language support.
+**WebScribe** is a Python command-line tool that converts any webpage into a concise, readable summary using **Llama 2** via **Ollama**. It extracts the main text from web articles and generates a human-friendly summary.
 
-WebScribe is lightweight, privacy-friendly, and perfect for quickly understanding long articles without reading them fully.
+It’s lightweight, privacy-friendly, and perfect for quickly understanding long articles without reading them fully.
 
 ---
 
 ## Features
 
-* Accepts a **URL input** from the user in a loop until `exit`
-* **Validates URLs** and ensures content is sufficient for summarization
+* Interactive URL input in a loop until `exit`
+* URL validation and content sufficiency check
 * Extracts main article text using **newspaper3k**
 * Summarizes content using **Llama 2** via **Ollama**
-* Displays **word count and estimated reading time** for both original and summary
-* Supports **multi-language summarization**
-* **Colorful CLI** interface with spinners for a smooth user experience
+* Shows **word count and estimated reading time** for original text and summary
+* Optional multi-language summarization
+* Colorful CLI interface with progress spinners for better UX
 
 ---
 
@@ -43,7 +44,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-> Make sure you have **Ollama running locally** with Llama 2 models installed.
+> Make sure **Ollama** is installed and running locally with Llama 2 models.
 
 ---
 
@@ -55,11 +56,11 @@ Run the main script:
 python main.py
 ```
 
-### Commands
+### Instructions
 
-* Enter a **valid URL** to summarize a webpage.
-* Type `exit` to quit the application.
-* Optionally, enter a **summary language** when prompted (default: English).
+1. Enter a **valid URL** to summarize a webpage.
+2. Enter the **summary language** when prompted (default: English).
+3. Type `exit` to quit.
 
 Example:
 
@@ -68,20 +69,20 @@ Enter a URL to summarize (or type 'exit' to quit): https://example.com/article
 Enter summary language (default: English): English
 ```
 
-Output includes:
+The output includes:
 
-* Original word count and estimated reading time
+* Original article word count and reading time
 * Summary text
-* Summary word count and estimated reading time
+* Summary word count and reading time
 
 ---
 
 ## Converting to Executable
 
-You can convert WebScribe to a standalone `.exe` using **PyInstaller**:
+You can create a standalone `.exe` using **PyInstaller**:
 
 ```powershell
-# Activate venv first
+# Activate virtual environment first
 .\venv\Scripts\Activate.ps1
 
 # Install PyInstaller
@@ -91,13 +92,11 @@ pip install pyinstaller
 python -m PyInstaller --onefile --console main.py
 ```
 
-The `.exe` will be located in the `dist` folder.
+The `.exe` will be in the `dist` folder.
 
 ---
 
 ## Requirements
-
-See `requirements.txt`:
 
 ```
 colorama==0.4.6
@@ -111,9 +110,9 @@ requests==2.31.0
 
 ## Notes
 
-* **Ollama** must be installed and running locally to summarize text.
+* **Ollama** must be installed and running locally for summarization.
 * Reading time is estimated at **200 words per minute**.
-* Works best with news articles, blogs, and well-formatted web pages.
+* Works best with news articles, blogs, and standard web pages.
 
 ---
 
@@ -122,3 +121,4 @@ requests==2.31.0
 This project is licensed under the MIT License.
 
 ---
+
